@@ -1,0 +1,68 @@
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+
+//still working on it 10:34, 11/10/17
+
+/**
+ * The while loop represents the game.
+ * Each iteration represents a turn of the game
+ * where you are given inputs (the heights of the mountains)
+ * and where you have to print an output (the index of the mountain to fire on)
+ * The inputs you are given are automatically updated according to your last actions.
+ **/
+int main()
+{
+ 
+		int targetarr[8][2];
+        int row = 0;
+        int col = 0;
+
+        
+        for (int i = 0; i < 8; i++) {
+            int mountainH; // represents the height of one mountain.
+            scanf("%d", &mountainH);
+            if(mountainH > 0){
+				col=  0;
+                targetarr[row][col] = i;
+                col=1;
+                targetarr[row][col] = mountainH;
+				//check position row/column in array 
+				//printf("%d, %d\n",row, col);
+				//printf("%d, %d\n",targetarr[row][0],targetarr[row][1]);
+				row++;
+                
+				
+            }            
+        }
+		
+		
+		
+		
+		
+        /*"2D~bubble sorter example"
+        //not initialized yet, just copy/pasted. Needs review/understanding
+		int l,j,k=0,x,temp;
+        for(l=0;l<row;l++)
+        {
+                for(j=l+1;j<row;j++)
+                {
+                        if(targetarr[l][k] > targetarr[j][k])
+                        {
+                            for(x=0;x<2;x++) {
+                                temp 			=	targetarr[l][x];
+                                targetarr[l][x] = 	targetarr[j][x];
+                                targetarr[j][x] =	temp;
+                                }
+                        }
+                }
+        }*/
+        
+        // Write an action using printf(). DON'T FORGET THE TRAILING \n
+        // To debug: fprintf(stderr, "Debug messages...\n");
+
+        printf("%d\n",targetarr[0][0]); // The index of the mountain to fire on.
+		printf("%d\n",targetarr[0][1]);
+		
+}
+
