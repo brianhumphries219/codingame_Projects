@@ -14,7 +14,7 @@
 int main()
 {
  
-		int targetarr[8][2];
+	int targetarr[8][2];
         int row = 0;
         int col = 0;
 
@@ -42,18 +42,21 @@ int main()
 		
         /*"2D~bubble sorter example"
         //not initialized yet, just copy/pasted. Needs review/understanding
-		int l,j,k=0,x,temp;
+	int l,j,tempROW, tempCOL;
         for(l=0;l<row;l++)
         {
                 for(j=l+1;j<row;j++)
                 {
-                        if(targetarr[l][k] > targetarr[j][k])
+                        if(targetarr[l][0] > targetarr[j][0])
                         {
-                            for(x=0;x<2;x++) {
-                                temp 			=	targetarr[l][x];
-                                targetarr[l][x] = 	targetarr[j][x];
-                                targetarr[j][x] =	temp;
-                                }
+                            
+                                tempROW		=	targetarr[l][0];
+                                targetarr[l][0] = 	targetarr[j][0];
+                                targetarr[j][0] =	tempROW;
+				tempCOL		=	targetarr[l][1];
+                                targetarr[l][1] = 	targetarr[j][1];
+                                targetarr[j][1] =	tempCOL;
+                                
                         }
                 }
         }*/
