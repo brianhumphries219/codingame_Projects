@@ -2,8 +2,6 @@
 #include <stdio.h>
 #include <string.h>
 
-//still working on it 10:34, 11/10/17
-
 /**
  * The while loop represents the game.
  * Each iteration represents a turn of the game
@@ -13,7 +11,11 @@
  **/
 int main()
 {
- 
+    
+    // game loop
+    while (1) {
+        
+
 	int targetarr[8][2];
         int row = 0;
         int col = 0;
@@ -47,13 +49,13 @@ int main()
         {
                 for(j=l+1;j<row;j++)
                 {
-                        if(targetarr[l][0] > targetarr[j][0])
+                        if(targetarr[l][1] < targetarr[j][1])
                         {
                             
-                                tempROW		=	targetarr[l][0];
+                                tempROW	    	=	targetarr[l][0];
                                 targetarr[l][0] = 	targetarr[j][0];
                                 targetarr[j][0] =	tempROW;
-				tempCOL		=	targetarr[l][1];
+			                	tempCOL	    	=	targetarr[l][1];
                                 targetarr[l][1] = 	targetarr[j][1];
                                 targetarr[j][1] =	tempCOL;
                                 
@@ -65,7 +67,11 @@ int main()
         // To debug: fprintf(stderr, "Debug messages...\n");
 
         printf("%d\n",targetarr[0][0]); // The index of the mountain to fire on.
-		printf("%d\n",targetarr[0][1]);
 		
 }
+        
+        
+        
 
+    return 0;
+}
