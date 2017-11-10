@@ -40,7 +40,7 @@ int main()
 		
 		
 		
-        /*"2D~bubble sorter example"
+        //"2D~bubble sorter example"
         //not initialized yet, just copy/pasted. Needs review/understanding
 	int l,j,tempROW, tempCOL;
         for(l=0;l<row;l++)
@@ -59,7 +59,7 @@ int main()
                                 
                         }
                 }
-        }*/
+        }
         
         // Write an action using printf(). DON'T FORGET THE TRAILING \n
         // To debug: fprintf(stderr, "Debug messages...\n");
