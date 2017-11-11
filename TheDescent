@@ -42,8 +42,7 @@ int main()
 		
 		
 		
-        //"2D~bubble sorter example"
-        //not initialized yet, just copy/pasted. Needs review/understanding
+        //"2D array bubble sorter"
 	int l,j,tempROW, tempCOL;
         for(l=0;l<row;l++)
         {
