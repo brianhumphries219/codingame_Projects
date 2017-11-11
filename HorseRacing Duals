@@ -1,24 +1,54 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+#include <math.h>
 
 /**
  * Auto-generated code below aims at helping you parse
  * the standard input according to the problem statement.
  **/
+ 
+ //won't solve last case, need a different sorting function in different language per forum posts, due to timeout
+ 
 int main()
 {
+
+    //array size dictated by game constraints. Can't use variable size array in C
+	int horse_arr[99999];
+    int row = 0;
     int N;
-    scanf("%d", &N);
+	
+	scanf("%d", &N);
     for (int i = 0; i < N; i++) {
         int Pi;
         scanf("%d", &Pi);
+        if (Pi >0);{ //try to eliminate 0 values to size down program
+            horse_arr[row]=Pi;
+            row++;
+        }
     }
+    int okiedokie=0;
+	int horsediff = 0;
+	
+	//use k value for max difference to bother checking
+	
+    for(int k=0;k<50 && okiedokie==0;k++){
+        for(int l=0; l<row && okiedokie==0; l++){
+            for(int j=l+1;j<row;j++){
+                if(abs(horse_arr[l] - horse_arr[j]) == horsediff)
+                        {
+                         okiedokie=1;
+						 break;
+						 }
+                }
+        }
 
-    // Write an action using printf(). DON'T FORGET THE TRAILING \n
-    // To debug: fprintf(stderr, "Debug messages...\n");
+		horsediff++;
 
-    printf("answer\n");
-
+	}
+		horsediff -= 1; //quick addition fix. horsediff added once more after already breaks.
+        printf("%d\n", horsediff);
+    
+    
     return 0;
 }
