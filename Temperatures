@@ -1,0 +1,47 @@
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+
+/**
+ * Auto-generated code below aims at helping you parse
+ * the standard input according to the problem statement.
+ **/
+ 
+ // sorts array into ascending, ignoring 0 values for the sort. picks closest to 0. if mixed +/-, picks +, and must display negative if both are negative (no abs)
+int main()
+{
+	int tempArr[10000]; 			//game defined array size
+	
+    int n; 							// the number of temperatures to analyse
+    scanf("%d", &n);
+    for (int i = 0; i < n; i++) {
+        int t; 						// a temperature expressed as an integer ranging from -273 to 5526
+        scanf("%d", &t);
+		tempArr[i]=t;				
+	}
+
+	int tempholder;
+	for (int j= 0; j<n; j++){
+		if (tempArr[j]!=0){
+			for(int k=0;k<n; k++){
+				if (abs(tempArr[j]) < abs(tempArr[k])){
+					tempholder	=	tempArr[k];
+					tempArr[k]	=	tempArr[j];
+					tempArr[j]	=	tempholder;
+				}
+			}
+		}
+	}
+if (abs(tempArr[0])==abs(tempArr[1])){
+	if (tempArr[0]<0){
+		printf("%d\n", tempArr[1]);
+	} else
+		printf("%d\n", tempArr[0]);
+}else
+		printf("%d\n", tempArr[0]);
+
+	
+	
+	
+    return 0;
+}
